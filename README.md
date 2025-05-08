@@ -44,7 +44,6 @@ $ npm start
     }
 ```
 - Mais instruções sobre a utilização através do SWAGGER
-![Swagger](./swagger.png)
 
 ## Instruções para implantação em Rede Local
 - 1 alterar "localhost" para o IP local e porta no caminho da linha 10 no arquivo swagger.json
