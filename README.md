@@ -34,12 +34,14 @@ $ npm start
 - Basta criar um usuário na rota /users e fazer login na rota /login para obter o token
 - Exemplo de dados para a criação de um usuário:
 ```json
-{
-    "nome": "Marcos",
-    "email": "marcos@gmailcom",
-    "password": "senha123",
-    "cpf":"701.511.906-40"
-}
+    {
+      "email": "silvia@email.com",
+      "password": "senai123",
+      "nome": "Silvia Santos Oliveira",
+      "cpf": "361.347.054-14",
+      "nascimento": "2000-03-05",
+      "telefone": "(11)22222-2222",
+    }
 ```
 - Mais instruções sobre a utilização através do SWAGGER
 ![Swagger](./swagger.png)
@@ -50,23 +52,23 @@ $ npm start
     "url": "http://localhost:4000",
 ```
 
-- 2 Para dispensar a autenticação JWT comentar as linhas a seguir do arquivo server.js
+- 2 Para dispensar a autenticação JWT comente as linhas a seguir do arquivo server.js
 ```js
 const rules = auth.rewriter({
     "/users*": "/660/users$1",
-    "/cursos*": "/660/cursos$1",
-    "/matriculas*": "/660/matriculas$1",
-    "/atividades*": "/660/atividades$1",
-    "/entregas*": "/660/entregas$1"
+    "/produtos*": "/660/produtos$1",
+    "/pedidos*": "/660/pedidos$1",
+    "/colaboradores*": "/660/colaboradores$1",
+    "/avaliacoes*": "/660/avaliacoes$1"
 });
 ```
 ```js
 const rules = auth.rewriter({
     // "/users*": "/660/users$1",
-    // "/cursos*": "/660/cursos$1",
-    // "/matriculas*": "/660/matriculas$1",
-    // "/atividades*": "/660/atividades$1",
-    // "/entregas*": "/660/entregas$1"
+    // "/produtos*": "/660/produtos$1",
+    // "/pedidos*": "/660/pedidos$1",
+    // "/colaboradores*": "/660/colaboradores$1",
+    // "/avaliacoes*": "/660/avaliacoes$1"
 });
 ```
 - 3 Executar com os comandos
@@ -74,3 +76,4 @@ const rules = auth.rewriter({
 npm install
 npx nodemon
 ```
+![Swagger](./swagger.png)

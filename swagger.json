@@ -51,15 +51,15 @@
     },
     {
       "name": "Pedidos",
-      "description": "Endpoints para gestão de Pedidos de Produtos Por Usuários"
+      "description": "Endpoints para gestão CRUD de Pedidos (1 produtos por pedido)"
     },
     {
-      "name": "Atividades e Recursos",
-      "description": "Endpoints de Atividades e Recursos"
+      "name": "Colaboradores",
+      "description": "Endpoints com CRUD de colaboradores"
     },
     {
-      "name": "Entregas",
-      "description": "Endpoints com CRUD de Entregas"
+      "name": "Avaliacoes",
+      "description": "Endpoints para listar Avaliacoes"
     }
   ],
   "paths": {
@@ -417,7 +417,7 @@
         ],
         "parameters": [
           {
-            "name": "usuario",
+            "name": "usuarioId",
             "in": "query",
             "required": false,
             "description": "Filtrar por Id do usuário",
@@ -426,7 +426,7 @@
             }
           },
           {
-            "name": "produto",
+            "name": "produtoId",
             "in": "query",
             "required": false,
             "description": "Filtrar por Id do produto",
@@ -472,12 +472,52 @@
                   "data": {
                     "type": "date",
                     "format": "date",
-                    "default":"2025-05-10"
+                    "default":"2025-05-14"
+                  },
+                  "cep": {
+                    "type": "string",
+                    "default":"13914-552"
+                  },
+                  "endereco": {
+                    "type": "string",
+                    "default":"Rua Osvaldo Aranha"
+                  },
+                  "numero": {
+                    "type": "string",
+                    "default":"171B"
+                  },
+                  "complemento": {
+                    "type": "string",
+                    "default":"Esquina com a Rua dos Três Irmãos"
+                  },
+                  "cartao": {
+                    "type": "string",
+                    "default":"0000.0000.2222.0000"
+                  },
+                  "expiracao": {
+                    "type": "string",
+                    "default":"05/28"
+                  },
+                  "cvv": {
+                    "type": "string",
+                    "default":"041"
+                  },
+                  "valor": {
+                    "type": "number",
+                    "default": 100.00
                   }
                 },
                 "required": [
-                  "usuario",
-                  "curso"
+                  "usuarioId",
+                  "produtoId",
+                  "data",
+                  "cep",
+                  "endereco",
+                  "numero",
+                  "cartao",
+                  "expiracao",
+                  "cvv",
+                  "valor"
                 ]
               }
             }
@@ -493,9 +533,9 @@
         }
       }
     },
-    "/Pedidos/{id}": {
+    "/pedidos/{id}": {
       "patch": {
-        "summary": "Alterar progresso do curso",
+        "summary": "Alterar dados do pedido",
         "tags": [
           "Pedidos"
         ],
@@ -509,7 +549,7 @@
             "name": "id",
             "in": "path",
             "required": true,
-            "description": "ID da matrícula cujo progresso deve ser alterado",
+            "description": "ID do pedido que deve ser alterado",
             "schema": {
               "type": "integer"
             }
@@ -522,9 +562,9 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "progresso": {
+                  "valor": {
                     "type": "integer",
-                    "default": 33
+                    "default": 89.9
                   }
                 },
                 "required": []
@@ -542,7 +582,7 @@
         }
       },
       "delete": {
-        "summary": "Excluir/Cancelar Matrícula",
+        "summary": "Excluir/Cancelar Pedido",
         "tags": [
           "Pedidos"
         ],
@@ -556,7 +596,7 @@
             "name": "id",
             "in": "path",
             "required": true,
-            "description": "ID da matrícula a ser removida",
+            "description": "ID do pedido a ser excluido",
             "schema": {
               "type": "integer"
             }
@@ -572,11 +612,11 @@
         }
       }
     },
-    "/atividades": {
+    "/colaboradores": {
       "get": {
-        "summary": "Obter lista de atividades",
+        "summary": "Obter lista de colaboradores",
         "tags": [
-          "Atividades e Recursos"
+          "Colaboradores"
         ],
         "security": [
           {
@@ -588,28 +628,18 @@
             "name": "id",
             "in": "query",
             "required": false,
-            "description": "Filtrar a atividade pelo Id",
+            "description": "Filtrar a colaboradores pelo Id",
             "schema": {
               "type": "integer"
             }
           },
           {
-            "name": "curso",
+            "name": "status",
             "in": "query",
             "required": false,
-            "description": "Filtrar atividades pelo Id do curso",
+            "description": "Filtrar colaboradores pelo status",
             "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "name": "data",
-            "in": "query",
-            "required": false,
-            "description": "Filtrar atividades pela Data",
-            "schema": {
-              "type": "string",
-              "format":"date"
+              "type": "string"
             }
           }
         ],
@@ -621,13 +651,159 @@
             "description": "Não autorizado"
           }
         }
+      },
+      "post":{
+        "summary": "Registrar pedido de um produto pelo usuário",
+        "tags": [
+          "Colaboradores"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "description": "Dados de criação",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome": {
+                    "type": "string",
+                    "default": "Alberto Roberto"
+                  },
+                  "departameto": {
+                    "type": "string",
+                    "default": "financeiro"
+                  },
+                  "dataContratacao": {
+                    "type": "date",
+                    "format": "date",
+                    "default":"2018-05-14"
+                  },
+                  "dataDemissao": {
+                    "type": "date",
+                    "format": "date",
+                    "default":"2025-05-10"
+                  },
+                  "avatar": {
+                    "type": "string",
+                    "default": "0000000000.jpg"
+                  },
+                  "status": {
+                    "type": "string",
+                    "default": "inativo"
+                  }
+                },
+                "required": [
+                  "nome",
+                  "departamento",
+                  "dataContratacao",
+                  "status"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Criado com sucesso"
+          },
+          "400": {
+            "description": "Erro de envio de dados"
+          }
+        }        
       }
     },
-    "/entregas":{
-      "get": {
-        "summary": "Obter lista de entregas",
+    "/colaboradores/{id}": {
+      "patch": {
+        "summary": "Alterar dados do colaborador",
         "tags": [
-          "Entregas"
+          "Colaboradores"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID do colaborador que deve ser alterado",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Dados para alteração",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome": {
+                    "type": "string",
+                    "default": "Arnaldo Silva"
+                  },
+                  "departamento": {
+                    "type": "string",
+                    "default": "vendas"
+                  }
+                },
+                "required": []
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Dados alterados com sucesso"
+          },
+          "404": {
+            "description": "Dados não encontrados"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Excluir/Cancelar Pedido",
+        "tags": [
+          "Colaboradores"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID do colaborador a ser excluido",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Excluída com sucesso"
+          },
+          "404": {
+            "description": "Id não encontrado"
+          }
+        }
+      }
+    },
+    "/avaliacoes":{
+      "get": {
+        "summary": "Obter lista de avaliacoes",
+        "tags": [
+          "Avaliacoes"
         ],
         "security": [
           {
@@ -639,25 +815,7 @@
             "name": "id",
             "in": "query",
             "required": false,
-            "description": "Filtrar por Id da entrega",
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "name": "atividade",
-            "in": "query",
-            "required": false,
-            "description": "Filtrar por Id da atividade",
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "name": "usuario",
-            "in": "query",
-            "required": false,
-            "description": "Filtrar por Id do usuário",
+            "description": "Filtrar por Id da avaliação",
             "schema": {
               "type": "integer"
             }
@@ -673,9 +831,9 @@
         }
       },
       "post": {
-        "summary": "Entrega da atividade pelo usuário",
+        "summary": "Registrar avaliação do cliente",
         "tags": [
-          "Entregas"
+          "Avaliacoes"
         ],
         "security": [
           {
@@ -689,26 +847,29 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "usuario": {
-                    "type": "integer",
-                    "default": 1
-                  },
-                  "atividade": {
-                    "type": "integer",
-                    "default": 1
-                  },
-                  "arquivo": {
+                  "cliente": {
                     "type": "string",
-                    "default": "1733418431067.pdf"
+                    "default": "Jair Costa"
+                  },
+                  "area": {
+                    "type": "string",
+                    "default": "SAC"
                   },
                   "data": {
-                    "type": "string",
-                    "format": "date"
+                    "type": "date",
+                    "format": "date",
+                    "default":"2025-05-14"
+                  },
+                  "valor": {
+                    "type": "integer",
+                    "default": 5
                   }
                 },
                 "required": [
-                  "usuario",
-                  "atividade"
+                  "cliente",
+                  "area",
+                  "data",
+                  "valor"
                 ]
               }
             }

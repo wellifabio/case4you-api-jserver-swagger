@@ -58,9 +58,9 @@ server.post("/arquivos", (req, res) => {
 const rules = auth.rewriter({
     "/users*": "/660/users$1",
     "/produtos*": "/660/produtos$1",
-    "/matriculas*": "/660/matriculas$1",
-    "/atividades*": "/660/atividades$1",
-    "/entregas*": "/660/entregas$1"
+    "/pedidos*": "/660/pedidos$1",
+    //"/colaboradores*": "/660/colaboradores$1",
+    //"/avaliacoes*": "/660/avaliacoes$1"
 });
 
 server.use(rules);

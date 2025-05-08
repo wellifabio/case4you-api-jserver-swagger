@@ -89,474 +89,342 @@
   ],
   "pedidos": [
     {
-      "usuarioId":1,
-      "produtoId":1,
-      "data":"2025-05-14"
-    }
-  ],
-  "atividades": [
-    {
-      "nome": "Lista de Exercícios",
-      "data": "2025-01-20",
-      "curso": 1,
-      "recursos": [
-        {
-          "nome": "Questões",
-          "icone": "pdf.png",
-          "tipo": "pdf",
-          "recurso": "1733418431067.pdf"
-        },
-        {
-          "nome": "Video explicativo",
-          "icone": "video.png",
-          "tipo": "video",
-          "recurso": "1733412847578.mp4"
-        }
-      ],
+      "usuarioId": 1,
+      "produtoId": 1,
+      "data": "2025-05-14",
+      "cep": "13914-552",
+      "endereco": "Rua Osvaldo Aranha",
+      "numero": "171B",
+      "complemento": "Esquina com a Rua dos Três Irmãos",
+      "cartao": "0000.0000.2222.0000",
+      "expiracao": "05/28",
+      "cvv": "041",
+      "valor": 95,
       "id": 1
     },
     {
-      "nome": "Situação Problema",
-      "data": "2025-01-25",
-      "curso": 1,
-      "recursos": [
-        {
-          "nome": "Instruções",
-          "icone": "pdf.png",
-          "tipo": "pdf",
-          "recurso": "1733418431067.pdf"
-        },
-        {
-          "nome": "Imagem 3D de um cavalo",
-          "icone": "3d.png",
-          "tipo": "3d",
-          "recurso": "1733417806190.glb"
-        }
-      ],
+      "usuarioId": 1,
+      "produtoId": 2,
+      "data": "2025-05-15",
+      "cep": "13914-552",
+      "endereco": "Rua Osvaldo Aranha",
+      "numero": "171B",
+      "complemento": "Esquina com a Rua dos Três Irmãos",
+      "cartao": "0000.0000.2222.0000",
+      "expiracao": "05/28",
+      "cvv": "041",
+      "valor": 110,
       "id": 2
     },
     {
-      "nome": "Lista de Exercícios",
-      "data": "2025-01-22",
-      "curso": 2,
-      "recursos": [
-        {
-          "nome": "Questões",
-          "icone": "pdf.png",
-          "tipo": "pdf",
-          "recurso": "1733418431067.pdf"
-        },
-        {
-          "nome": "Video explicativo",
-          "icone": "video.png",
-          "tipo": "video",
-          "recurso": "1733412847578.mp4"
-        }
-      ],
+      "usuarioId": 1,
+      "produtoId": 4,
+      "data": "2025-05-15",
+      "cep": "13914-552",
+      "endereco": "Rua Osvaldo Aranha",
+      "numero": "171B",
+      "complemento": "Esquina com a Rua dos Três Irmãos",
+      "cartao": "0000.0000.2222.0000",
+      "expiracao": "05/28",
+      "cvv": "041",
+      "valor": 88.9,
       "id": 3
     },
     {
-      "nome": "Seminário",
-      "data": "2025-01-28",
-      "curso": 2,
-      "recursos": [
-        {
-          "nome": "Instruções",
-          "icone": "pdf.png",
-          "tipo": "pdf",
-          "recurso": "1733418431067.pdf"
-        },
-        {
-          "nome": "Video explicativo",
-          "icone": "video.png",
-          "tipo": "video",
-          "recurso": "1733412847578.mp4"
-        }
-      ],
+      "usuarioId": 2,
+      "produtoId": 1,
+      "data": "2025-05-15",
+      "cep": "13900-001",
+      "endereco": "Rua Marcos Camargo",
+      "numero": "23",
+      "cartao": "1111.0000.2222.0000",
+      "expiracao": "02/28",
+      "cvv": "671",
+      "valor": 94.9,
       "id": 4
     },
     {
-      "nome": "Estudo de Caso",
-      "data": "2025-01-20",
-      "curso": 2,
-      "recursos": [
-        {
-          "nome": "Instruções",
-          "icone": "pdf.png",
-          "tipo": "pdf",
-          "recurso": "1733418431067.pdf"
-        },
-        {
-          "nome": "Fotografia do estudo",
-          "icone": "imagem.png",
-          "tipo": "imagem",
-          "recurso": "1733415861485.webp"
-        }
-      ],
+      "usuarioId": 2,
+      "produtoId": 3,
+      "data": "2025-05-15",
+      "cep": "13900-001",
+      "endereco": "Rua Marcos Camargo",
+      "numero": "23",
+      "cartao": "1111.0000.2222.0000",
+      "expiracao": "02/28",
+      "cvv": "671",
+      "valor": 94.9,
       "id": 5
     },
     {
-      "nome": "Pesquisa",
-      "data": "2025-01-15",
-      "curso": 3,
-      "recursos": [
-        {
-          "nome": "Instruções",
-          "icone": "pdf.png",
-          "tipo": "pdf",
-          "recurso": "1733332238287.pdf"
-        },
-        {
-          "nome": "Imagem para a capa",
-          "icone": "imagem.png",
-          "tipo": "imagem",
-          "recurso": "1733413300252.png"
-        },
-        {
-          "nome": "Video explicativo",
-          "icone": "video.png",
-          "tipo": "video",
-          "recurso": "1733412847578.mp4"
-        },
-        {
-          "nome": "Vaca 3d para análise",
-          "icone": "3d.png",
-          "tipo": "3d",
-          "recurso": "1733417806190.glb"
-        }
-      ],
+      "usuarioId": 3,
+      "produtoId": 3,
+      "data": "2025-05-15",
+      "cep": "13900-123",
+      "endereco": "Rua Almeida Silva",
+      "numero": "12",
+      "complemento": "Ap14 Bl10",
+      "cartao": "1111.0000.2222.5555",
+      "expiracao": "02/28",
+      "cvv": "123",
+      "valor": 78.3,
+      "id": 6
+    }
+  ],
+  "colaboradores": [
+    {
+      "nome": "Alberto Roberto",
+      "departameto": "financeiro",
+      "dataContratacao": "2018-05-14",
+      "dataDemissao": "2025-05-10",
+      "avatar": "1746728128842.jpeg",
+      "status": "inativo",
+      "id": 1
+    },
+    {
+      "nome": "Passos Dias Aguiar",
+      "departameto": "vendas",
+      "dataContratacao": "2020-11-01",
+      "avatar": "1746706688118.jpg",
+      "status": "ativo",
+      "id": 2
+    },
+    {
+      "nome": "Maria Cecília Almeida",
+      "departameto": "vendas",
+      "dataContratacao": "2020-11-01",
+      "avatar": "1746706631719.jpg",
+      "status": "ativo",
+      "id": 3
+    },
+    {
+      "nome": "Marcos Cavalcante",
+      "departameto": "qualidade",
+      "dataContratacao": "2025-03-15",
+      "avatar": "1746728294086.jpeg",
+      "status": "ativo",
+      "id": 4
+    },
+    {
+      "nome": "Aline Silva",
+      "departameto": "vendas",
+      "dataContratacao": "2025-04-15",
+      "avatar": "1746706746379.jpg",
+      "status": "ativo",
+      "id": 5
+    },
+    {
+      "nome": "Gilberto Silva",
+      "departameto": "SAC",
+      "dataContratacao": "2025-04-15",
+      "avatar": "1746728366689.webp",
+      "status": "ativo",
       "id": 6
     },
     {
-      "nome": "Lista de exercícios",
-      "data": "2025-01-23",
-      "curso": 3,
-      "recursos": [
-        {
-          "nome": "Questionário com 10 questões",
-          "icone": "pdf.png",
-          "tipo": "pdf",
-          "recurso": "1733332238287.pdf"
-        }
-      ],
+      "nome": "Juliana Oliveira",
+      "departameto": "SAC",
+      "dataContratacao": "2025-04-01",
+      "avatar": "1746728398803.jpeg",
+      "status": "ativo",
       "id": 7
     },
     {
-      "nome": "Seminário",
-      "data": "2025-01-25",
-      "curso": 3,
-      "recursos": [
-        {
-          "nome": "Instruções",
-          "icone": "pdf.png",
-          "tipo": "pdf",
-          "recurso": "1733332238287.pdf"
-        }
-      ],
+      "nome": "Solange Oliveira",
+      "departameto": "vendas",
+      "dataContratacao": "2025-04-01",
+      "avatar": "1746728428657.jpg",
+      "status": "ativo",
       "id": 8
     },
     {
-      "nome": "Lista de exercícios",
-      "data": "2025-02-05",
-      "curso": 4,
-      "recursos": [
-        {
-          "nome": "Questionário",
-          "icone": "pdf.png",
-          "tipo": "pdf",
-          "recurso": "1733332238287.pdf"
-        }
-      ],
+      "nome": "Ivone Motta",
+      "departameto": "vendas",
+      "dataContratacao": "2025-05-01",
+      "avatar": "1746706631719.jpg",
+      "status": "ativo",
       "id": 9
     },
     {
-      "nome": "Lista de exercícios",
-      "data": "2025-02-05",
-      "curso": 5,
-      "recursos": [
-        {
-          "nome": "Questionário",
-          "icone": "pdf.png",
-          "tipo": "pdf",
-          "recurso": "1733332238287.pdf"
-        }
-      ],
+      "nome": "Jair Motta",
+      "departameto": "vendas",
+      "dataContratacao": "2024-05-01",
+      "dataDemissao": "2025-05-01",
+      "avatar": "1746728366689.webp",
+      "status": "inativo",
       "id": 10
     },
     {
-      "nome": "Lista de exercícios",
-      "data": "2025-02-05",
-      "curso": 6,
-      "recursos": [
-        {
-          "nome": "Questionário",
-          "icone": "pdf.png",
-          "tipo": "pdf",
-          "recurso": "1733332238287.pdf"
-        }
-      ],
+      "nome": "Otavio Motta",
+      "departameto": "vendas",
+      "dataContratacao": "2024-05-01",
+      "dataDemissao": "2025-04-01",
+      "avatar": "1746728294086.jpeg",
+      "status": "inativo",
       "id": 11
-    },
-    {
-      "nome": "Lista de exercícios",
-      "data": "2025-02-05",
-      "curso": 6,
-      "recursos": [
-        {
-          "nome": "Questionário",
-          "icone": "pdf.png",
-          "tipo": "pdf",
-          "recurso": "1733332238287.pdf"
-        }
-      ],
-      "id": 12
-    },
-    {
-      "nome": "Lista de exercícios",
-      "data": "2025-02-05",
-      "curso": 7,
-      "recursos": [
-        {
-          "nome": "Questionário",
-          "icone": "pdf.png",
-          "tipo": "pdf",
-          "recurso": "1733332238287.pdf"
-        }
-      ],
-      "id": 13
-    },
-    {
-      "nome": "Lista de exercícios",
-      "data": "2025-02-05",
-      "curso": 8,
-      "recursos": [
-        {
-          "nome": "Questionário",
-          "icone": "pdf.png",
-          "tipo": "pdf",
-          "recurso": "1733332238287.pdf"
-        }
-      ],
-      "id": 14
-    },
-    {
-      "nome": "Lista de exercícios",
-      "data": "2025-02-07",
-      "curso": 9,
-      "recursos": [
-        {
-          "nome": "Questionário",
-          "icone": "pdf.png",
-          "tipo": "pdf",
-          "recurso": "1733332238287.pdf"
-        }
-      ],
-      "id": 15
-    },
-    {
-      "nome": "Lista de exercícios",
-      "data": "2025-02-10",
-      "curso": 10,
-      "recursos": [
-        {
-          "nome": "Questionário",
-          "icone": "pdf.png",
-          "tipo": "pdf",
-          "recurso": "1733332238287.pdf"
-        }
-      ],
-      "id": 16
-    },
-    {
-      "nome": "Lista de exercícios",
-      "data": "2025-02-15",
-      "curso": 10,
-      "recursos": [
-        {
-          "nome": "Questionário",
-          "icone": "pdf.png",
-          "tipo": "pdf",
-          "recurso": "1733332238287.pdf"
-        }
-      ],
-      "id": 17
-    },
-    {
-      "nome": "Lista de exercícios",
-      "data": "2025-02-15",
-      "curso": 11,
-      "recursos": [
-        {
-          "nome": "Questionário",
-          "icone": "pdf.png",
-          "tipo": "pdf",
-          "recurso": "1733332238287.pdf"
-        }
-      ],
-      "id": 18
-    },
-    {
-      "nome": "Lista de exercícios",
-      "data": "2025-02-25",
-      "curso": 12,
-      "recursos": [
-        {
-          "nome": "Questionário",
-          "icone": "pdf.png",
-          "tipo": "pdf",
-          "recurso": "1733332238287.pdf"
-        }
-      ],
-      "id": 19
-    },
-    {
-      "nome": "Lista de exercícios",
-      "data": "2025-02-20",
-      "curso": 13,
-      "recursos": [
-        {
-          "nome": "Questionário",
-          "icone": "pdf.png",
-          "tipo": "pdf",
-          "recurso": "1733332238287.pdf"
-        }
-      ],
-      "id": 20
-    },
-    {
-      "nome": "Lista de exercícios",
-      "data": "2025-02-20",
-      "curso": 2,
-      "recursos": [
-        {
-          "nome": "Questionário",
-          "icone": "pdf.png",
-          "tipo": "pdf",
-          "recurso": "1733332238287.pdf"
-        }
-      ],
-      "id": 21
-    },
-    {
-      "nome": "Lista de exercícios",
-      "data": "2025-02-20",
-      "curso": 14,
-      "recursos": [
-        {
-          "nome": "Questionário",
-          "icone": "pdf.png",
-          "tipo": "pdf",
-          "recurso": "1733332238287.pdf"
-        }
-      ],
-      "id": 22
-    },
-    {
-      "nome": "Lista de exercícios",
-      "data": "2025-02-20",
-      "curso": 15,
-      "recursos": [
-        {
-          "nome": "Questionário",
-          "icone": "pdf.png",
-          "tipo": "pdf",
-          "recurso": "1733332238287.pdf"
-        }
-      ],
-      "id": 23
-    },
-    {
-      "nome": "Lista de exercícios",
-      "data": "2025-02-20",
-      "curso": 16,
-      "recursos": [
-        {
-          "nome": "Questionário",
-          "icone": "pdf.png",
-          "tipo": "pdf",
-          "recurso": "1733332238287.pdf"
-        }
-      ],
-      "id": 24
-    },
-    {
-      "nome": "Lista de exercícios",
-      "data": "2025-02-20",
-      "curso": 16,
-      "recursos": [
-        {
-          "nome": "Questionário",
-          "icone": "pdf.png",
-          "tipo": "pdf",
-          "recurso": "1733332238287.pdf"
-        }
-      ],
-      "id": 25
-    },
-    {
-      "nome": "Lista de exercícios",
-      "data": "2025-02-20",
-      "curso": 16,
-      "recursos": [
-        {
-          "nome": "Questionário",
-          "icone": "pdf.png",
-          "tipo": "pdf",
-          "recurso": "1733332238287.pdf"
-        }
-      ],
-      "id": 26
     }
   ],
-  "entregas": [
+  "avaliacoes": [
     {
-      "usuario": 1,
-      "atividade": 1,
-      "arquivo": "1733418431067.pdf",
-      "data": "2025-01-08",
+      "cliente": "Jair Costa",
+      "area": "SAC",
+      "data": "2025-01-07",
+      "valor": 5,
       "id": 1
     },
     {
-      "usuario": 1,
-      "atividade": 2,
-      "arquivo": "1733418431067.pdf",
+      "cliente": "Fabiana",
+      "area": "vendas",
       "data": "2025-01-09",
+      "valor": 3,
       "id": 2
     },
     {
-      "usuario": 1,
-      "atividade": 3,
-      "arquivo": "1733418431067.pdf",
-      "data": "2025-01-10",
+      "cliente": "Martha",
+      "area": "vendas",
+      "data": "2025-01-09",
+      "valor": 3,
       "id": 3
     },
     {
-      "usuario": 2,
-      "atividade": 1,
-      "arquivo": "1733418431067.pdf",
+      "cliente": "Mariana Silva",
+      "area": "vendas",
       "data": "2025-01-12",
+      "valor": 1,
       "id": 4
     },
     {
-      "usuario": 2,
-      "atividade": 2,
-      "arquivo": "1733418431067.pdf",
+      "cliente": "Jurema Silva",
+      "area": "vendas",
       "data": "2025-01-12",
+      "valor": 5,
       "id": 5
     },
     {
-      "usuario": 2,
-      "atividade": 3,
-      "arquivo": "1733418431067.pdf",
+      "cliente": "Jurema Silva",
+      "area": "SAC",
       "data": "2025-01-12",
+      "valor": 4,
       "id": 6
     },
     {
-      "usuario": 1,
-      "atividade": 4,
-      "arquivo": "1733418431067.pdf",
-      "data": "2025-01-12",
+      "cliente": "Bruna Silva",
+      "area": "SAC",
+      "data": "2025-01-15",
+      "valor": 4,
       "id": 7
+    },
+    {
+      "cliente": "Carlos Costa",
+      "area": "SAC",
+      "data": "2025-01-28",
+      "valor": 2,
+      "id": 8
+    },
+    {
+      "cliente": "Ivanildo Costa",
+      "area": "SAC",
+      "data": "2025-01-28",
+      "valor": 0,
+      "id": 9
+    },
+    {
+      "cliente": "Marinalva Costa",
+      "area": "SAC",
+      "data": "2025-02-17",
+      "valor": 0,
+      "id": 10
+    },
+    {
+      "cliente": "Benedita Martins",
+      "area": "vendas",
+      "data": "2025-02-21",
+      "valor": 2,
+      "id": 11
+    },
+    {
+      "cliente": "Maria Martins",
+      "area": "vendas",
+      "data": "2025-03-05",
+      "valor": 5,
+      "id": 12
+    },
+    {
+      "cliente": "Roberta Martins",
+      "area": "vendas",
+      "data": "2025-03-05",
+      "valor": 4,
+      "id": 13
+    },
+    {
+      "cliente": "Roberta Martins",
+      "area": "SAC",
+      "data": "2025-03-08",
+      "valor": 4,
+      "id": 14
+    },
+    {
+      "cliente": "Carla Martins",
+      "area": "vendas",
+      "data": "2025-03-10",
+      "valor": 4,
+      "id": 15
+    },
+    {
+      "cliente": "Gisele Martins",
+      "area": "vendas",
+      "data": "2025-03-13",
+      "valor": 5,
+      "id": 16
+    },
+    {
+      "cliente": "Gisele Silva",
+      "area": "vendas",
+      "data": "2025-03-13",
+      "valor": 5,
+      "id": 17
+    },
+    {
+      "cliente": "Bruno Silva",
+      "area": "SAC",
+      "data": "2025-03-15",
+      "valor": 5,
+      "id": 18
+    },
+    {
+      "cliente": "Gilberto Silva",
+      "area": "SAC",
+      "data": "2025-03-25",
+      "valor": 5,
+      "id": 19
+    },
+    {
+      "cliente": "Dagoberto Silva",
+      "area": "vendas",
+      "data": "2025-04-07",
+      "valor": 5,
+      "id": 20
+    },
+    {
+      "cliente": "Dagoberto Moreira",
+      "area": "vendas",
+      "data": "2025-04-07",
+      "valor": 5,
+      "id": 21
+    },
+    {
+      "cliente": "Humberto Moreira",
+      "area": "SAC",
+      "data": "2025-04-07",
+      "valor": 5,
+      "id": 22
+    },
+    {
+      "cliente": "José Roberto Moreira",
+      "area": "vendas",
+      "data": "2025-04-17",
+      "valor": 4,
+      "id": 23
     }
   ]
 }
