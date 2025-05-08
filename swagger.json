@@ -1,0 +1,728 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API CASE4YOU",
+    "version": "1.0.0",
+    "description": "Documentação da API CASE4YOU"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:4000",
+      "description": "Servidor local"
+    }
+  ],
+  "securityDefinitions": {
+    "bearerAuth": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header",
+      "description": "Bearer token para autenticação",
+      "scheme": "bearer",
+      "bearer format": "JWT",
+      "bearer token": "JWT <token>",
+      "bearer token description": "Bearer token para autenticação"
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearer format": "JWT"
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Auth",
+      "description": "Endpoints de autenticação"
+    },
+    {
+      "name": "Arquivos Estáticos (imagens, pdfs, audios, videos, 3ds)",
+      "description": "Endpoints de arquivos estáticos (imagens)"
+    },
+    {
+      "name": "Usuários",
+      "description": "Endpoints para cadastro e alterações de usuarios"
+    },
+    {
+      "name": "Produtos",
+      "description": "Endpoints para listar produtos"
+    },
+    {
+      "name": "Pedidos",
+      "description": "Endpoints para gestão de Pedidos de Produtos Por Usuários"
+    },
+    {
+      "name": "Atividades e Recursos",
+      "description": "Endpoints de Atividades e Recursos"
+    },
+    {
+      "name": "Entregas",
+      "description": "Endpoints com CRUD de Entregas"
+    }
+  ],
+  "paths": {
+    "/login": {
+      "post": {
+        "summary": "Login do usuário",
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "description": "Dados de login",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "default": "ana@email.com"
+                  },
+                  "password": {
+                    "type": "string",
+                    "default": "senai123"
+                  }
+                },
+                "required": [
+                  "email",
+                  "password"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Login bem-sucedido"
+          },
+          "400": {
+            "description": "Erro de validação"
+          }
+        }
+      }
+    },
+    "/static/{arquivo}": {
+      "get": {
+        "summary": "Diretório de arquivos estáticos (imagens)",
+        "tags": [
+          "Arquivos Estáticos (imagens, pdfs, audios, videos, 3ds)"
+        ],
+        "parameters": [
+          {
+            "name": "arquivo",
+            "in": "path",
+            "required": true,
+            "description": "Nome e extensão do arquivo",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucesso"
+          },
+          "404": {
+            "description": "Não encontrado"
+          }
+        }
+      }
+    },
+    "/arquivos": {
+      "post": {
+        "summary": "Envio de arquivos para diretório",
+        "tags": [
+          "Arquivos Estáticos (imagens, pdfs, audios, videos, 3ds)"
+        ],
+        "requestBody": {
+          "description": "Dados de criação",
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "imagem": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                },
+                "required": [
+                  "imagem"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Sucesso"
+          },
+          "400": {
+            "description": "Erro de envio de dados"
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "summary": "Obter lista de usuários",
+        "tags": [
+          "Usuários"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucesso"
+          },
+          "401": {
+            "description": "Não autorizado"
+          }
+        }
+      },
+      "post": {
+        "summary": "Criar novo elemento",
+        "tags": [
+          "Usuários"
+        ],
+        "requestBody": {
+          "description": "Dados de criação",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome": {
+                    "type": "string",
+                    "default": "Bruna Martins"
+                  },
+                  "cpf": {
+                    "type": "string",
+                    "default": "984.949.240-60"
+                  },
+                  "nascimento": {
+                    "type": "date",
+                    "default": "2001-07-15"
+                  },
+                  "telefone": {
+                    "type": "string",
+                    "default": "(11)66666-0000"
+                  },
+                  "email": {
+                    "type": "string",
+                    "default": "bruna@email.com"
+                  },
+                  "password": {
+                    "type": "string",
+                    "default": "senai123"
+                  }
+                },
+                "required": [
+                  "nome",
+                  "cpf",
+                  "nascimento",
+                  "telefone",
+                  "email",
+                  "password"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Criado com sucesso"
+          },
+          "400": {
+            "description": "Erro de envio de dados"
+          }
+        }
+      }
+    },
+    "/users/{id}": {
+      "patch": {
+        "summary": "Alterar campos do usuário: nome do arquivo de imagem e/ou audio que foi feito upload",
+        "tags": [
+          "Usuários"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID do usuário que deve ser alterado",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Dados para alteração",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "avatar": {
+                    "type": "string",
+                    "default": "1733330738054.png"
+                  }
+                },
+                "required": []
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Dados alterados com sucesso"
+          },
+          "404": {
+            "description": "Dados não encontrados"
+          }
+        }
+      },
+      "put": {
+        "summary": "Alterar todos os campos do usuário",
+        "tags": [
+          "Usuários"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID do usuário que deve ser alterado",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Dados para alteração",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome": {
+                    "type": "string",
+                    "default": "Ana Silva"
+                  },
+                  "cpf": {
+                    "type": "string",
+                    "default": "111.222.333-44"
+                  },
+                  "email": {
+                    "type": "string",
+                    "default": "anasilva@email.com"
+                  },
+                  "telefone": {
+                    "type": "string",
+                    "default": "(19)00000-0000"
+                  },
+                  "nascimento": {
+                    "type": "date",
+                    "default": "2000-01-01"
+                  },
+                  "password": {
+                    "type": "string",
+                    "default": "senai123"
+                  },
+                  "avatar": {
+                    "type": "string",
+                    "default": "1733330738054.png"
+                  }
+                },
+                "required": [
+                  "nome",
+                  "cpf",
+                  "email",
+                  "telefone",
+                  "nascimento",
+                  "password",
+                  "avatar"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Dados alterados com sucesso"
+          },
+          "404": {
+            "description": "Dados não encontrados"
+          }
+        }
+      }
+    },
+    "/produtos": {
+      "get": {
+        "summary": "Obter lista de produtos",
+        "tags": [
+          "Produtos"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "description": "Filtrar por Id do produto",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucesso"
+          },
+          "401": {
+            "description": "Não autorizado"
+          }
+        }
+      }
+    },
+    "/pedidos": {
+      "get": {
+        "summary": "Obter lista de Pedidos",
+        "tags": [
+          "Pedidos"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "usuario",
+            "in": "query",
+            "required": false,
+            "description": "Filtrar por Id do usuário",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "produto",
+            "in": "query",
+            "required": false,
+            "description": "Filtrar por Id do produto",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucesso"
+          },
+          "401": {
+            "description": "Não autorizado"
+          }
+        }
+      },
+      "post": {
+        "summary": "Registrar pedido de um produto pelo usuário",
+        "tags": [
+          "Pedidos"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "description": "Dados de criação",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "usuarioId": {
+                    "type": "integer",
+                    "default": 1
+                  },
+                  "produtoId": {
+                    "type": "integer",
+                    "default": 1
+                  },
+                  "data": {
+                    "type": "date",
+                    "format": "date",
+                    "default":"2025-05-10"
+                  }
+                },
+                "required": [
+                  "usuario",
+                  "curso"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Criado com sucesso"
+          },
+          "400": {
+            "description": "Erro de envio de dados"
+          }
+        }
+      }
+    },
+    "/Pedidos/{id}": {
+      "patch": {
+        "summary": "Alterar progresso do curso",
+        "tags": [
+          "Pedidos"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID da matrícula cujo progresso deve ser alterado",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Dados para alteração",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "progresso": {
+                    "type": "integer",
+                    "default": 33
+                  }
+                },
+                "required": []
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Dados alterados com sucesso"
+          },
+          "404": {
+            "description": "Dados não encontrados"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Excluir/Cancelar Matrícula",
+        "tags": [
+          "Pedidos"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID da matrícula a ser removida",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Excluída com sucesso"
+          },
+          "404": {
+            "description": "Id não encontrado"
+          }
+        }
+      }
+    },
+    "/atividades": {
+      "get": {
+        "summary": "Obter lista de atividades",
+        "tags": [
+          "Atividades e Recursos"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "description": "Filtrar a atividade pelo Id",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "curso",
+            "in": "query",
+            "required": false,
+            "description": "Filtrar atividades pelo Id do curso",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "data",
+            "in": "query",
+            "required": false,
+            "description": "Filtrar atividades pela Data",
+            "schema": {
+              "type": "string",
+              "format":"date"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucesso"
+          },
+          "401": {
+            "description": "Não autorizado"
+          }
+        }
+      }
+    },
+    "/entregas":{
+      "get": {
+        "summary": "Obter lista de entregas",
+        "tags": [
+          "Entregas"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "description": "Filtrar por Id da entrega",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "atividade",
+            "in": "query",
+            "required": false,
+            "description": "Filtrar por Id da atividade",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "usuario",
+            "in": "query",
+            "required": false,
+            "description": "Filtrar por Id do usuário",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucesso"
+          },
+          "401": {
+            "description": "Não autorizado"
+          }
+        }
+      },
+      "post": {
+        "summary": "Entrega da atividade pelo usuário",
+        "tags": [
+          "Entregas"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "description": "Dados de criação",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "usuario": {
+                    "type": "integer",
+                    "default": 1
+                  },
+                  "atividade": {
+                    "type": "integer",
+                    "default": 1
+                  },
+                  "arquivo": {
+                    "type": "string",
+                    "default": "1733418431067.pdf"
+                  },
+                  "data": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                },
+                "required": [
+                  "usuario",
+                  "atividade"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Criado com sucesso"
+          },
+          "400": {
+            "description": "Erro de envio de dados"
+          }
+        }
+      }
+    }
+  }
+}
