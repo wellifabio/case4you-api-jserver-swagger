@@ -27,6 +27,8 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 $ npm install
 
 # Execute a aplicação 
+$ npx nodemon
+##ou
 $ npm start
 # O servidor inciará na porta:4000 - acesse <http://localhost:4000/swagger> para ver a documentação
 ```
@@ -46,19 +48,19 @@ $ npm start
 - Mais instruções sobre a utilização através do SWAGGER
 
 ## Instruções para implantação em Rede Local
-- 1 alterar "localhost" para o IP local e porta no caminho da linha 10 no arquivo swagger.json
+- 1 alterar "localhost" para o IP local e porta no caminho da linha 10 no arquivo **swagger.json**
 ```json
     "url": "http://localhost:4000",
 ```
 
-- 2 Para dispensar a autenticação JWT comente as linhas a seguir do arquivo server.js
+- 2 Para dispensar a autenticação JWT comente as linhas a seguir do arquivo **server.js**
 ```js
 const rules = auth.rewriter({
     "/users*": "/660/users$1",
     "/produtos*": "/660/produtos$1",
     "/pedidos*": "/660/pedidos$1",
-    "/colaboradores*": "/660/colaboradores$1",
-    "/avaliacoes*": "/660/avaliacoes$1"
+    // "/colaboradores*": "/660/colaboradores$1",
+    // "/avaliacoes*": "/660/avaliacoes$1"
 });
 ```
 ```js

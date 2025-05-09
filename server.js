@@ -59,8 +59,8 @@ const rules = auth.rewriter({
     "/users*": "/660/users$1",
     "/produtos*": "/660/produtos$1",
     "/pedidos*": "/660/pedidos$1",
-    //"/colaboradores*": "/660/colaboradores$1",
-    //"/avaliacoes*": "/660/avaliacoes$1"
+    // "/colaboradores*": "/660/colaboradores$1",
+    // "/avaliacoes*": "/660/avaliacoes$1"
 });
 
 server.use(rules);

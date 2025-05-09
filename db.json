@@ -37,8 +37,8 @@
       "detalhes": "Case com o tema vingadores, Demolidor",
       "preco": 90,
       "fotos": [
-        "0000000000000.jpg",
-        "0000000000000.jpg"
+        "1746791439408.png",
+        "1746791451479.png"
       ],
       "id": 1
     },
@@ -47,9 +47,9 @@
       "detalhes": "Case com o tema vingadores, Thor",
       "preco": 80,
       "fotos": [
-        "0000000000000.jpg",
-        "0000000000000.jpg",
-        "0000000000000.jpg"
+        "1746791520592.png",
+        "1746791525972.png",
+        "1746791534035.png"
       ],
       "id": 2
     },
@@ -58,9 +58,9 @@
       "detalhes": "Case com o tema vingadores, Homem de Ferro",
       "preco": 90,
       "fotos": [
-        "0000000000000.jpg",
-        "0000000000000.jpg",
-        "0000000000000.jpg"
+        "1746791600860.png",
+        "1746791607546.png",
+        "1746791612777.png"
       ],
       "id": 3
     },
@@ -69,22 +69,31 @@
       "detalhes": "Case com o tema vingadores, Viúva Negra",
       "preco": 70,
       "fotos": [
-        "0000000000000.jpg",
-        "0000000000000.jpg",
-        "0000000000000.jpg"
+        "1746791692212.png",
+        "1746791697693.png"
       ],
       "id": 4
     },
     {
       "nome": "Case Homem Aranha",
-      "detalhes": "Case com o tema vingadores, Homem Aranh",
+      "detalhes": "Case com o tema vingadores, Homem Aranha",
       "preco": 70,
       "fotos": [
-        "0000000000000.jpg",
-        "0000000000000.jpg",
-        "0000000000000.jpg"
+        "1746791733074.png",
+        "1746791737158.png",
+        "1746791781406.png"
       ],
-      "id": 4
+      "id": 5
+    },
+    {
+      "nome": "Case Capitão América",
+      "detalhes": "Case com o tema vingadores, Capitão América",
+      "preco": 70,
+      "fotos": [
+        "1746791807267.png",
+        "1746791812073.png"
+      ],
+      "id": 6
     }
   ],
   "pedidos": [
