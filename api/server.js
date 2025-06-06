@@ -11,7 +11,7 @@ const router = jsonServer.router("db.json")
 const middlewares = jsonServer.defaults()
 
 const swaggerUi = require('swagger-ui-express');// Documentação Swagger
-const swaggerDoc = require('./swagger.json'); // Arquivo de documentação Swagger
+const swaggerDoc = require('../swagger.json'); // Arquivo de documentação Swagger
 server.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 
 const ip = "localhost";
@@ -34,6 +34,7 @@ let storage = multer.diskStorage({
 })
 
 let upload = multer({ storage })
+
 server.use(cors())
 server.use("/static", express.static(path.join(__dirname, "uploads")))
 server.use(upload.any())

@@ -8,13 +8,14 @@
     "swagger-ui-express": "^5.0.1"
   },
   "scripts": {
-    "start": "npx nodemon server.js"
+    "start": "node api/server.js",
+    "dev": "nodemon api/server.js"
   },
-  "bin": "./server.js",
+  "bin": "./api/server.js",
   "name": "case4you-api-jserver-swagger",
   "version": "1.0.0",
   "description": "Módulo possibilita o upload de arquivos em uma fake REST API, bom para mockar um backend simples. Utiliza o json-server como base para criar uma fake REST API, um middleware de autenticação json-server-auth",
-  "main": "server.js",
+  "main": "./api/server.js",
   "keywords": [
     "upload",
     "json",
