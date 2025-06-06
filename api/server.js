@@ -49,6 +49,11 @@ server.use((req, res, next) => {
     next();
 })
 
+//Rota de testes
+server.get("/", (req, res) => {
+    res.json({ titulo: "API de testes Case4you" })
+})
+
 //Rota para receber imagem
 server.post("/arquivos", (req, res) => {
     res.json({ arquivo: imagem })
