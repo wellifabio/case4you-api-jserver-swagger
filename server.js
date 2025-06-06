@@ -11,11 +11,11 @@ const router = jsonServer.router("db.json")
 const middlewares = jsonServer.defaults()
 
 const swaggerUi = require('swagger-ui-express');// Documentação Swagger
-const swaggerDoc = require('../swagger.json'); // Arquivo de documentação Swagger
+const swaggerDoc = require('./swagger.json'); // Arquivo de documentação Swagger
 server.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 
 const ip = "localhost";
-const port = 3000;// Porta da API
+const port = 4000;// Porta da API
 
 //Upload de imagens
 let imagem = ""
