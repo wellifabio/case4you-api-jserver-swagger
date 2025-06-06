@@ -15,7 +15,7 @@ const swaggerDoc = require('./swagger.json'); // Arquivo de documentação Swagg
 server.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 
 const ip = "localhost";
-const port = 4000;// Porta da API
+const port = 3000;// Porta da API
 
 //Upload de imagens
 let imagem = ""
