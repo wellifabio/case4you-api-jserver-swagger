@@ -53,7 +53,7 @@ $ npm start
     "url": "http://localhost:4000",
 ```
 
-- 2 Para dispensar a autenticação JWT comente as linhas a seguir do arquivo **server.js**
+- 2 Para dispensar a autenticação JWT comente as linhas a seguir do arquivo **./api/server.js**
 ```js
 const rules = auth.rewriter({
     "/users*": "/660/users$1",
